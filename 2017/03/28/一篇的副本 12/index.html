@@ -72,7 +72,7 @@
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: undefined
+        search: true
     }
 </script>
 
@@ -116,6 +116,13 @@
 
         
 
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
         
 
 
@@ -324,14 +331,14 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/03/28/一篇的副本 4/">
+                <a href="/2017/03/28/一篇的副本 2/">
                     周强的第一篇
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/03/28/一篇的副本 6/">
+                <a href="/2017/03/28/一篇的副本 3/">
                     周强的第一篇
                 </a>
             </div>
@@ -419,7 +426,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/03/28/一篇的副本 4/" title="上一篇: 周强的第一篇">
+            <a href="/2017/03/28/一篇的副本 2/" title="上一篇: 周强的第一篇">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -427,13 +434,13 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/03/28/一篇的副本 6/" title="下一篇: 周强的第一篇">
+            <a href="/2017/03/28/一篇的副本 3/" title="下一篇: 周强的第一篇">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/28/一篇的副本 5/">周强的第一篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/28/一篇的副本 10/">周强的第一篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/28/一篇的副本 11/">周强的第一篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/28/一篇的副本 2/">周强的第一篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/28/一篇的副本 3/">周强的第一篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/28/一篇的副本 4/">周强的第一篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/28/一篇的副本 12/">周强的第一篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/28/一篇的副本 6/">周强的第一篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/28/一篇的副本/">周强的第一篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/28/一篇的副本 7/">周强的第一篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/28/一篇的副本 8/">周强的第一篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/28/一篇的副本 9/">周强的第一篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/28/周强的第一篇/">周强的第一篇</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/28/一篇的副本 5/">周强的第一篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/28/一篇的副本 11/">周强的第一篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/28/一篇的副本 2/">周强的第一篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/28/一篇的副本 12/">周强的第一篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/28/一篇的副本 3/">周强的第一篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/28/一篇的副本 4/">周强的第一篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/28/一篇的副本 10/">周强的第一篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/28/一篇的副本 6/">周强的第一篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/28/一篇的副本/">周强的第一篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/28/一篇的副本 7/">周强的第一篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/28/一篇的副本 8/">周强的第一篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/28/一篇的副本 9/">周强的第一篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/28/周强的第一篇/">周强的第一篇</a></li></ul>
 
 
 
