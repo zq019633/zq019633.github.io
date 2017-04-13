@@ -15,16 +15,25 @@
 
 
 
-<meta name="description" content="ios中常用的控件">
+<meta name="description" content="1.当网络请求到数据后，想把数据填充到tableView上，但是 ios中获取到需要刷新一下数据，否则会导致tableView的那几个方法不走
+ [_tableView reloadData];
+2.如果要说使用didSelectRowAtIndexPath方法 需要指向那个代理 _tableView.dataSource = self; _tableView.delegate = self;
+3">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ios控件篇">
-<meta property="og:url" content="https://zhouqiang.vip/2017/03/31/ios控件篇/index.html">
+<meta property="og:title" content="ios中使用UItableView遇到的坑">
+<meta property="og:url" content="https://zhouqiang.vip/2017/04/13/ios中使用UItableView遇到的坑/index.html">
 <meta property="og:site_name" content="周强的博客">
-<meta property="og:description" content="ios中常用的控件">
-<meta property="og:updated_time" content="2017-03-31T02:27:48.000Z">
+<meta property="og:description" content="1.当网络请求到数据后，想把数据填充到tableView上，但是 ios中获取到需要刷新一下数据，否则会导致tableView的那几个方法不走
+ [_tableView reloadData];
+2.如果要说使用didSelectRowAtIndexPath方法 需要指向那个代理 _tableView.dataSource = self; _tableView.delegate = self;
+3">
+<meta property="og:updated_time" content="2017-04-13T09:24:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ios控件篇">
-<meta name="twitter:description" content="ios中常用的控件">
+<meta name="twitter:title" content="ios中使用UItableView遇到的坑">
+<meta name="twitter:description" content="1.当网络请求到数据后，想把数据填充到tableView上，但是 ios中获取到需要刷新一下数据，否则会导致tableView的那几个方法不走
+ [_tableView reloadData];
+2.如果要说使用didSelectRowAtIndexPath方法 需要指向那个代理 _tableView.dataSource = self; _tableView.delegate = self;
+3">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -56,7 +65,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>ios控件篇 | 周强的博客</title>
+<title>ios中使用UItableView遇到的坑 | 周强的博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -275,11 +284,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-ios控件篇" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-ios中使用UItableView遇到的坑" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/03/31/ios控件篇/" class="article-date">
-      <time datetime="2017-03-31T01:50:14.000Z" itemprop="datePublished">2017-03-31</time>
+      <a href="/2017/04/13/ios中使用UItableView遇到的坑/" class="article-date">
+      <time datetime="2017-04-13T09:17:45.000Z" itemprop="datePublished">2017-04-13</time>
 </a>
 
 
@@ -294,7 +303,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      ios控件篇
+      ios中使用UItableView遇到的坑
     </h1>
   
 
@@ -311,10 +320,11 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>ios中常用的控件<br><a id="more"></a></p>
-<p></p><h3>UIWindow</h3><br>UIwindow是一种特殊的控件,通常在一个app 中也只有一个UIWindow<br>在ios 中一个UIWindow 主要有这样的几个作用。<br>1.展示app的可视内容<br>2.将事件分发给视图以及其他的对象<p></p>
-<p>主要是通过手写代码的方式创建window，官方给出的示例代码：<br>`self.window=[[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];<br>self.window.backgroundColor=[UIColor whiteColor];</p>
-<p>`</p>
+        <p>1.当网络请求到数据后，想把数据填充到tableView上，但是 ios中获取到需要刷新一下数据，否则会导致tableView的那几个方法不走</p>
+<p> [_tableView reloadData];</p>
+<p>2.如果要说使用didSelectRowAtIndexPath方法 需要指向那个代理<br> _tableView.dataSource = self;<br> _tableView.delegate = self;</p>
+<p>3.网络请求获取 到数据以后</p>
+<p>NSMutableArray <em> as=[[NSMutableArray alloc] init];<br>// 这种是根据 字典的形式取数据         //集合 循环  取出字典    字典 取出 对应的Url<br>for (NSDictionary </em>book in responseObject[@”data”]) {<br>    [as addObject:book];<br>  }</p>
 
       
     </div>
@@ -323,13 +333,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/03/31/ios控件篇/">ios控件篇</a></p>
+        <p><span>本文标题:</span><a href="/2017/04/13/ios中使用UItableView遇到的坑/">ios中使用UItableView遇到的坑</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">周强</a></p>
-        <p><span>发布时间:</span>2017-03-31, 09:50:14</p>
-        <p><span>最后更新:</span>2017-03-31, 10:27:48</p>
+        <p><span>发布时间:</span>2017-04-13, 17:17:45</p>
+        <p><span>最后更新:</span>2017-04-13, 17:24:44</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/03/31/ios控件篇/" title="ios控件篇">https://zhouqiang.vip/2017/03/31/ios控件篇/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://zhouqiang.vip/2017/03/31/ios控件篇/　　作者: 周强" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/04/13/ios中使用UItableView遇到的坑/" title="ios中使用UItableView遇到的坑">https://zhouqiang.vip/2017/04/13/ios中使用UItableView遇到的坑/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://zhouqiang.vip/2017/04/13/ios中使用UItableView遇到的坑/　　作者: 周强" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -341,16 +351,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/03/31/摘录《把时间当作朋友》的句子/">
-                    摘录《把时间当作朋友》的句子
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/03/30/身为程序员/">
-                    身为程序员
+                <a href="/2017/04/13/ios中不同的controller传递数据-代理方式/">
+                    ios中不同的controller传递数据---代理方式
                 </a>
             </div>
         
@@ -362,7 +366,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">UIWindow</span></a></li></ol>
+            
         
     </div>
     <style>
@@ -398,7 +402,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"ios控件篇　| 周强的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"ios中使用UItableView遇到的坑　| 周强的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -414,7 +418,7 @@
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="2017/03/31/ios控件篇/" data-title="ios控件篇" data-url="https://zhouqiang.vip/2017/03/31/ios控件篇/"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/04/13/ios中使用UItableView遇到的坑/" data-title="ios中使用UItableView遇到的坑" data-url="https://zhouqiang.vip/2017/04/13/ios中使用UItableView遇到的坑/"></div>
     <script>
         var duoshuoQuery = {short_name:"null"};
         var loadComment = function(){
@@ -437,15 +441,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/03/31/摘录《把时间当作朋友》的句子/" title="上一篇: 摘录《把时间当作朋友》的句子">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/03/30/身为程序员/" title="下一篇: 身为程序员">
+            <a href="/2017/04/13/ios中不同的controller传递数据-代理方式/" title="下一篇: ios中不同的controller传递数据---代理方式">
                 <i class="fa fa-angle-right"></i>
             </a>
         

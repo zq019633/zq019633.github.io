@@ -278,6 +278,66 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-ios中使用UItableView遇到的坑" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/04/13/ios中使用UItableView遇到的坑/" class="article-date">
+      <time datetime="2017-04-13T09:17:45.000Z" itemprop="datePublished">2017-04-13</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/13/ios中使用UItableView遇到的坑/">ios中使用UItableView遇到的坑</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>1.当网络请求到数据后，想把数据填充到tableView上，但是 ios中获取到需要刷新一下数据，否则会导致tableView的那几个方法不走</p>
+<p> [_tableView reloadData];</p>
+<p>2.如果要说使用didSelectRowAtIndexPath方法 需要指向那个代理<br> _tableView.dataSource = self;<br> _tableView.delegate = self;</p>
+<p>3.网络请求获取 到数据以后</p>
+<p>NSMutableArray <em> as=[[NSMutableArray alloc] init];<br>// 这种是根据 字典的形式取数据         //集合 循环  取出字典    字典 取出 对应的Url<br>for (NSDictionary </em>book in responseObject[@”data”]) {<br>    [as addObject:book];<br>  }</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-ios中不同的controller传递数据-代理方式" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
