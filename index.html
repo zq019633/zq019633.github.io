@@ -278,6 +278,84 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-ios中不同的controller传递数据-代理方式" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/04/13/ios中不同的controller传递数据-代理方式/" class="article-date">
+      <time datetime="2017-04-13T08:29:06.000Z" itemprop="datePublished">2017-04-13</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/13/ios中不同的controller传递数据-代理方式/">ios中不同的controller传递数据---代理方式</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>ios开发中会出现2个controller 传递数据的情况，和安卓中的两个activity传递数据是一个道理，只不过安卓中是通过Intent传递，ios中我使用的是代理的方式传递数据。<br>一般都是AViewController 把数据传递到NextViewController</p>
+<p>第一步：<br>在A.h中：<br>@class AViewController;<br>@protocol AViewCOntrollerDelegate <nsobject></nsobject></p>
+<p>//这个方法是用来在BViewController中接收数据<br>-(void) passData:(NSDictionary *)values;</p>
+<p>@end</p>
+<p>并且在A.h中声明一个代理<br>@property (nonatomic, weak) id <aviewcontrollerdelegate>delegate;</aviewcontrollerdelegate></p>
+<p>第二步：<br>在A.m中 要跳转的地方（一般都是UITableView的条目 响应点击事件）</p>
+<p>-(void)tableView:(UITableView <em>)tableView didSelectRowAtIndexPath:(NSIndexPath </em>)indexPath<br>{</p>
+<pre><code>NSLog(@&quot;我要跳转了&quot;);
+
+NextViewController *next1=[[NextViewController alloc] init];
+self.delegate=next1;
+
+//这里的array是通过网络请求获得的
+[self.delegate passData:[array objectAtIndex:indexPath.row ]];
+[self.navigationController pushViewController:next1 animated:YES];
+</code></pre><p>}</p>
+<p>第三步：</p>
+<p>在NextViewController.h  中 实现这个代理</p>
+<p>@interface NextViewController : UIViewController<aviewcontrollerdelegate>{<br>}</aviewcontrollerdelegate></p>
+<p>然后在在NextViewController.m中实现passData方法，获取从AViewController中传递过来的数据</p>
+<p>-(void) passData:(NSDictionary *)values{</p>
+<pre><code>NSLog(@&quot;我被传过来了%@&quot;,values);
+</code></pre><p>}<br>⚠️  传递的时候要以字典的形式 也就是NSDictionary 比较方便<br>⚠️</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-摘录《把时间当作朋友》的句子" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
